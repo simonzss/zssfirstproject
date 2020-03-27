@@ -20,7 +20,7 @@ print(os.path)
 print(os.path.dirname(__file__))
 
 # 将pictures中的1.jpg复制到当前目录
-with open(r'C:\Users\Simon\PycharmProjects\zssfirstproject\pictures\1.jpg', 'rb') as pic:
+with open(r'pictures\1.jpg', 'rb') as pic:
     contain = pic.read()
     path1 = os.path.join(os.path.dirname(__file__), '2.jpg')
     print(path1)
@@ -29,7 +29,7 @@ with open(r'C:\Users\Simon\PycharmProjects\zssfirstproject\pictures\1.jpg', 'rb'
 
 # 如果在实际开发中，经常看不到源文件的文件名，应该如下处理
 print('看不到文件名的处理如下*********')
-with open(r'C:\Users\Simon\PycharmProjects\zssfirstproject\pictures\1.jpg', 'rb') as pic:
+with open(r'pictures\1.jpg', 'rb') as pic:
     contain = pic.read()
     print(pic.name)  # pic的完整路径字符串
     picname = pic.name[pic.name.rfind('\\') + 1:]  # 切片操作，切出最右边的文件名部分
@@ -46,7 +46,7 @@ print(os.path.abspath(__file__))
 print(os.path.dirname(__file__))
 print(os.getcwd())  #当前文件文件夹的绝对路径
 
-path2=r'C:\Users\Simon\PycharmProjects\zssfirstproject\pictures\1.jpg'
+path2=r'pictures\1.jpg'
 print(os.path.split(path2))
 print(os.path.split(path2)[1])  # split得到绝对路径中的文件名
 print(os.path.splitext(path2)[1])  # splitext得到绝对路径中的文件的扩展名，用来得知文件类型
