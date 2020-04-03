@@ -6,7 +6,7 @@ list1 = [x for x in range(10)]
 print(list1)
 print(type(list1))
 
-gene1 = (x for x in range(10))
+gene1 = (x for x in range(10))  # 用()定义生成器
 print(gene1)
 print(type(gene1))
 
@@ -81,9 +81,46 @@ g.__next__()               # 因为有了g.send，所以到本行已经取完所
 # -->既然可以通过g.send来给temp传值，那么传进去的temp值自然就可以参与生成器内部的运算<--
 
 
+# 生成器   协程    迅雷下载的多线程，一个大文件分成一万份，10个线程每个线程负责1000份
+# 进程>线程>协程   简单来说协程就是线程的小线程，可以交互执行
+print()
+print('以下是生成器用作协程的部分**************')
+
+def task1(i):
+    for x in range(i):
+        print('搬了第{}块砖'.format(x))
+
+def task2(i):
+    for x in range(i):
+        print('听了第{}首歌'.format(x))
+
+task1(5)
+task2(5)
+print('这样只能实现顺序执行，搬完砖才能听歌')
+
+print()
+print('利用生成器进行协程，边搬砖边听歌')
+def task1(i):
+    for x in range(i):
+        print('搬了第{}块砖'.format(x))
+        yield
+
+def task2(i):
+    for x in range(i):
+        print('听了第{}首歌'.format(x))
+        yield
 
 
-
+g1=task1(5)
+g2=task2(5)
+try:
+    while True:
+        g1.__next__()
+        g2.__next__()
+# except Exception as err:   注意这里有异常但没有被Exception所捕获，执行这里会得不到任何结果
+#     print(err)
+except:
+    print('所有值已经取完了')
 
 
 

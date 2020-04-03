@@ -37,6 +37,8 @@ print(list1_com2)
 # print(list1[0].keys())
 
 # 有列表推导式，也就有集合推导式，字典推导式
+# 集合推导式，可以用来去重
+# 以下为字典推导式的例子，注意字典的key要求是唯一的
 dict1 = {'name': 'tom', 'salary': 5000,'wage':5000}    # 注意这里key和value交换后，key的唯一性问题，导致value被覆盖
 dict1_exchange={value:key for key,value in dict1.items()}  # value的'salary'被覆盖为'wage'
 print(dict1_exchange)
