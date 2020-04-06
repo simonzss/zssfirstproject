@@ -16,6 +16,7 @@
 # reference 参考、引用
 # parameter  参数
 # binary 二进制
+# resolution 决议、决定
 # 转义字符 \n 换行 \t 制表符   \'  \"
 # \r 回车（打印头回到行首，如果没有与\n同用，会导致已有的内容被覆盖）
 # r'任意字符串'  r=raw   原样不转义输出  但不能是print(r'\')

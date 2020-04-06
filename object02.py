@@ -27,7 +27,7 @@ print('可以看出，self就是\'当前对象\'本身，实质就是同一块�
 p2.price = 99999
 print(p2.price)
 
-# 类的魔术方法
+# 类的魔术方法   魔术方法，能够在特定的时候自动触发，不需要调用
 print()
 print('类的魔术方法')
 
@@ -119,5 +119,7 @@ Dog.test_static()
 print()
 print('*' * 30)
 print()
+
+
 
 
