@@ -33,7 +33,7 @@ class Person:
        return 'hello'
 
     def hello1(self):   # 类方法必须定义返回值，否则默认返回None
-       print('hello')
+       print('hello',Person.__super_clazz_salary)  # 访问类的变量也要通过Person.来访问，不能直接访问
 
 class Student(Person):
     pass

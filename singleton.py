@@ -14,3 +14,4 @@ s1=Singleton()
 s2=Singleton()
 print(s1) #<__main__.Singleton object at 0x0000022EA2765D00>
 print(s2) #<__main__.Singleton object at 0x0000022EA2765D00>
+
