@@ -34,7 +34,7 @@ print(module_calculate.__name__) # __name__如果在引用它的其他类中，�
 # modules intended for use as the main module of a Python application must always use absolute imports.
 
 # from的起点是项目，因此内层调外层，直接写外层.就可以
-# 包内__init__.py文件的用途是，当导入包时，默认一定先导入__init__.py文件
+# 包内__init__.py文件的用途是，当导入包时，默认一定先导入__init__.py文件，内存有包了，就会同时执行__init__.py
 # 因此一般把一些初始化的函数|变量|类定义在__init__.py文件中
 # __init__.py文件中的成员的访问，直接通过包名.成员名，而不是包名.__init__.成员名
 # from 包名 import * 时，包中的__init__.py必须定义__all__,谁在__all__里谁才能被默认加载，这与from 模块 import * 不同
@@ -46,3 +46,4 @@ print(module_calculate.__name__) # __name__如果在引用它的其他类中，�
 # 1、这是一个架构错误，要尽量避免循环导入的出现
 # 2、解决方法有二，一是将'from 模块 import 成员'写入当前模块的函数中，二是将'from 模块 import 成员'写在当前模块的最后
 # 在解决循环导入的过程中，经常用if __name__=='__main__'来让被加载的模块'只加载不执行'
+# 推荐将'from 模块 import 成员'写入当前模块的函数中解决模块的循环导入问题
