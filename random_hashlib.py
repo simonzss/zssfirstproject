@@ -51,3 +51,5 @@ md5=hashlib.md5(msg.encode('utf-8'))
 
 print(md5)              # <md5 HASH object @ 0x000001D2A55802F0>
 print(md5.hexdigest())  # 打印加密结果
+
+# 第三方模块    pillow 图像文件处理    requests 浏览器操作
