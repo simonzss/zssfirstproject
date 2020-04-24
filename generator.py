@@ -67,13 +67,13 @@ g=gen()
 # g.send('第一次给temp传值')    # 注意这句，如果放在第一次执行生成器之前会报错，
 # 错误为：TypeError: can't send non-None value to a just-started generator
 #print(g.send(None))          # 这一句也和下面那个注释一样，直接会执行一次生成
-print(g.__next__())
+print('aa',g.__next__())
 print('*********************')
 g.send('第一次给temp传值')    # send起到了双重作用，一是给temp传值，二是直接执行了下一次的生成
 print('*********************')
 print(g.__next__())
 print('*********************')
-g.__next__()
+g.__next__() # 注意g.__next__()和print(g.__next__())的区别，前者不打印yield返回的值，后者会将yield的值打印出来
 print('*********************')
 g.__next__()               # 因为有了g.send，所以到本行已经取完所有的n值了 n=4
 # print(g.__next__())   # 没有g.send的话，那么到本行n取值已经取完，n=4
