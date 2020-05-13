@@ -213,12 +213,14 @@
 
 - 类选择器
 
+  语法是.加上类名，如.important
+
   - 类选择器允许以一种独立于文档元素的方式来指定样式
 
     该选择器可以单独使用，也可以与其他元素结合使用
 
     **只有适当地标记文档后，才能使用类选择器或者结合元素选择器**
-
+  
   - ```
     <h1 class="important">
     This heading is very important.
@@ -226,17 +228,69 @@
     
     <p class="important">
     This paragraph is very important.
-    </p>
+  </p>
     ```
 
     类选择器语法
-
+  
     ```
-    *.important {color:red;}
+  *.important {color:red;}
     ```
 
     如果您只想选择所有类名相同的元素，可以在类选择器中忽略通配选择器，这没有任何不好的影响：
-
+  
     ```
     .important {color:red;}
+    ```
+    
+  - 结合元素选择器，可以单独将段落显示为红色文本
+  
+    ```
+    p.important {color:red;}
+    ```
+  
+  - 多类选择器
+  
+    ```
+    <p class="important warning">
+    This paragraph is a very important warning.
+    </p>
+    ```
+  
+    多类两个词的顺序无关紧要，写成 warning important 也可以
+  
+    我们假设 class 为 important 的所有元素都是粗体，而 class 为 warning 的所有元素为斜体，class 中同时包含 important 和 warning 的所有元素还有一个银色的背景 。就可以写作：
+  
+    ```
+    .important {font-weight:bold;}
+    .warning {font-style:italic;}
+    .important.warning {background:silver;}
+    ```
+  
+- ID选择器
+
+  ID选择器是唯一的，同一个HTML文档中会且仅会生效第一次
+
+  ID 选择器前面有一个 # 号，即# 加上id名
+
+  ```
+  #intro {font-weight:bold;}
+  ```
+
+  以下是一个实际 ID 选择器的例子：
+
+  ```
+  <p id="intro">This is a paragraph of introduction.</p>
+  ```
+
+- 请注意，类选择器和 ID 选择器可能是区分大小写的。所以类和 ID 值的大小写必须与文档中的相应值匹配。
+
+- 属性选择器
+
+  - **属性选择器可以根据元素的属性及属性值来选择元素**
+
+  - 语法为元素名加上[该元素属性名]，例如以下
+
+  - ```
+    a[href] {color:red;}
     ```
