@@ -436,4 +436,47 @@
   - \<div>是一个块级元素，换行是\<div>固有的唯一格式表现
   - 可以将多个\<div>标签完全重叠为一个面，通过z-index属性设置沿着z轴的位置，正数离用户近，负数离用户远，从而实现翻书的效果
 
-  
+
+
+
+# Javascript
+
+- 所有 JavaScript **标识符**对大小写敏感
+
+- 单行注释以 // 开头,多行注释以 /* 开头，以 */ 结尾
+
+- 在 HTML 中，JavaScript 代码必须位于 \<script> 与 \</script> 标签之间。
+
+  ##### 实例
+
+  ```
+  <script>
+  document.getElementById("demo").innerHTML = "我的第一段 JavaScript";
+  </script>
+  ```
+
+- 脚本可被放置与 HTML 页面的\<body> 或 \<head> 部分中，或兼而有之
+
+- 外部脚本：脚本可放置与外部文件中，在 \<script> 标签的 src (source) 属性中设置脚本的名称：
+
+  ##### 实例
+
+  ```
+  <script src="myScript.js"></script>
+  ```
+
+- JavaScript 会忽略多个空格
+
+- 关键字var用来定义变量
+
+- 关键字function用来定义函数
+
+  - ```
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Hello Kitty.";
+        document.getElementById("myDIV").innerHTML = "How are you?";
+    }
+    ```
+
+  - （）用来放置参数，{}用来放置语句
+
