@@ -3,6 +3,10 @@
 # 阻塞式  任务依次执行，上一个任务不完成，下一个任务就不会开始，进程由001-002-003-004-005-001-002循环使用
 # 注意，回调函数callback是单独的进程
 # apply_async 非阻塞式  apply阻塞式  非阻塞式用得较多，阻塞式其实就是串联电路模式
+# 回调函数的英文定义如下，本人现有水平暂不赞成回调函数一定是后于主函数执行的说法
+# In computer programming, a callback, also known as a "call-after" function,
+# is any executable code that is passed as an argument to other code;
+# that other code is expected to "call back" (execute) the argument at a given time.
 import os
 import time
 from multiprocessing.pool import Pool
