@@ -28,7 +28,7 @@ class Student:
         self.computer = computer
 
     def show_book(self):
-        if not self.books:  # 列表为空的判断方法！！！if self.books == False不起作用
+        if not self.books:  # 列表为空的判断方法！！！if self.books == 不起作用
             print('{}现在一本书也没有'.format(self.stu_name))
         else:
             print('{}现在有下列书'.format(self.stu_name))
