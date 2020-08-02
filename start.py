@@ -112,12 +112,12 @@ while ceng<=9:
 # ==  与  is  的区别
 s1='abc'
 s2='abc'
-#s3=input('请输入s3的值')  #输入'abc'
-#s4=input('请输入s4的值')  #输入'abc'
+# s3=input('请输入s3的值')  #输入'abc'
+# s4=input('请输入s4的值')  #输入'abc'
 print(s1==s2)
 print(s1 is s2) # 这里是常量赋值，所以s1的地址等于s2的地址
 #print(s3==s4)   # 值是True   说明  ==  比较的是值
-#print(s3 is s4) # 值是  说明  is  比较的是内存地址   这里是input进来的值，所以地址不同
+# print(s3 is s4) # 值是 False 说明  is  比较的是内存地址   这里是input进来的值，所以地址不同
 
 # 字符串支持 +   *   in    %s   %d   %f   %.2f   r(保留原格式)  切片操作[]  [:]与range()一样包前不包后  [::]
 print('picture.png'[0:7])
