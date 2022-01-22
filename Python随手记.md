@@ -524,12 +524,15 @@ Arguments: spam eggs
 
 ## 9.2. Python 作用域和命名空间
 
-- *namespace* （命名空间）是一个从名字到对象的映射。 大部分命名空间当前都由 Python 字典实现
+- *namespace* （命名空间）是一个从**名字**到**对象**的映射。 大部分命名空间当前都由 Python 字典实现
+
 - 任何跟在一个点号之后的名称都称为 *属性*（*attribute* ）
+
 - 在不同时刻创建的命名空间拥有不同的生存期。包含内置名称(the built-in names)的命名空间是在 Python 解释器启动时创建的，永远不会被删除。模块的全局命名空间在模块定义被读入时创建；通常，模块命名空间也会持续到解释器退出。被解释器的顶层调用执行的语句，无论是从一个脚本文件读取的还是交互式地读取的，都被认为是 [`__main__`](https://docs.python.org/zh-cn/3/library/__main__.html#module-__main__) 模块调用的一部分，因此它们拥有自己的全局命名空间。（内置名称实际上也存在于一个模块中；这个模块称作 [`builtins`](https://docs.python.org/zh-cn/3/library/builtins.html#module-builtins) 。）
+
 - 一个函数的本地命名空间在这个函数被调用时创建，并在函数返回或抛出一个不在函数内部处理的错误时被删除。（事实上，比起描述到底发生了什么，忘掉它更好。）当然，每次递归调用（recursive invocations）都会有它自己的本地命名空间。
 
-- 一个 *作用域* 是一个命名空间可直接访问的 Python 程序的文本区域。 这里的 “可直接访问” 意味着对名称的非限定引用（an unqualified reference）会尝试在命名空间中查找名称。
+- 一个 *作用域* 是一个可直接访问命名空间的 Python 程序的文本区域。 这里的 “可直接访问” 意味着对名称的非限定引用（an unqualified reference）会尝试在命名空间中查找名称。
 
   A *scope* is a textual region of a Python program where a namespace is directly accessible. “Directly accessible” here means that an unqualified reference to a name attempts to find the name in the namespace.
 
@@ -549,6 +552,8 @@ Arguments: spam eggs
 - Python 的一个特殊规定是这样的 -- 如果不存在生效的 [`global`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#global) 或 [`nonlocal`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#nonlocal) 语句 -- 则对名称的赋值总是会进入最内层作用域。 赋值不会复制数据 --- 它们只是将名称绑定到对象。 删除也是如此：语句 `del x` 会从局部作用域所引用的命名空间中移除对 `x` 的绑定。 事实上，所有引入新名称的操作都是使用局部作用域：值得一提的是，[`import`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#import) 语句和函数定义会在局部作用域中绑定模块或函数名称。
 
   [`global`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#global) 语句可被用来表明特定变量生存于全局作用域并且应当在其中被重新绑定；[`nonlocal`](https://docs.python.org/zh-cn/3/reference/simple_stmts.html#nonlocal) 语句表明特定变量生存于封闭作用域中并且应当在其中被重新绑定。
+
+## 9.3. 初探类
 
 
 
